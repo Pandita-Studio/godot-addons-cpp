@@ -58,20 +58,20 @@ void DiscordWrap::init()
     core_creation_ok = true;
 
     core->SetLogHook(discord::LogLevel::Info, [](discord::LogLevel level, const char *msg) {
-		switch (level) {
-			case discord::LogLevel::Warn:
+        switch (level) {
+            case discord::LogLevel::Warn:
                 DiscordWrap::log(strcat("Warning: ", msg));
-				break;
+                break;
 
-			case discord::LogLevel::Info:
+            case discord::LogLevel::Info:
                 DiscordWrap::log(strcat("Info: ", msg));
-				break;
+                break;
 
-			case discord::LogLevel::Error:
+            case discord::LogLevel::Error:
                 DiscordWrap::log(strcat("Error: ", msg));
-				break;
-		}
-	});
+                break;
+        }
+    });
 }
 
 void DiscordWrap::clear_end_time()
